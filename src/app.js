@@ -14,4 +14,11 @@ app.use(express.urlencoded({ extended: true,
      limit: "16mb" }))
      app.use(express.static("public"))
 app.use(cookieParser())
+
+// router import
+
+import { registerUser } from "./controllers/user.controller.js"
+// routers declearation
+app.use("/api/v1/users",registerUser)
+
 export { app }
